@@ -10,18 +10,18 @@ import yaml
 
 # osモジュールをインポート
 import os
+import sys
 
 #
 # メイン関数
 #
-if __name__ == "__main__":
-    
+def main(data_dir):   
     # ダウンロードしたラベルデータ(yaml形式)
     original_label = \
-      '../data/original/jsut-label-master/text_kana/basic5000.yaml'
+      f'{data_dir}/original/jsut-label-master/text_kana/basic5000.yaml'
 
     # ラベルのリストを格納する場所
-    out_label_dir = '../data/label/all'
+    out_label_dir = f'{data_dir}/label/all'
 
     # 出力ディレクトリが存在しない場合は作成する
     os.makedirs(out_label_dir, exist_ok=True)
@@ -71,3 +71,5 @@ if __name__ == "__main__":
             # 音素ラベルは，'-'をスペースに置換して書き込む
             label_phone.write('%s %s\n' % (filename, phones.replace('-',' ')))
 
+if __name__ == "__main__":
+    main(sys.args[1])
