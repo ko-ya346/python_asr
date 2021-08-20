@@ -18,7 +18,7 @@ import sys
 
 def main(data_dir):
     # wavファイルが展開されたディレクトリ
-    original_wav_dir = f'{data_dir}/original/jsut_ver1.1/basic5000/wav'
+    original_wav_dir = f'{data_dir}/jsut_ver1.1/basic5000/wav'
 
     # フォーマット変換したwavファイルを出力するディレクトリ
     out_wav_dir = f'{data_dir}/wav'
