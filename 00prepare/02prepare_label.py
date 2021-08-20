@@ -18,7 +18,7 @@ import sys
 def main(data_dir):   
     # ダウンロードしたラベルデータ(yaml形式)
     original_label = \
-      f'{data_dir}/original/jsut-label-master/text_kana/basic5000.yaml'
+      f'{data_dir}/jsut-label-master/text_kana/basic5000.yaml'
 
     # ラベルのリストを格納する場所
     out_label_dir = f'{data_dir}/label/all'
