@@ -14,14 +14,18 @@ import zipfile
 
 # osモジュールをインポート
 import os
+import sys
 
 #
 # メイン関数
 #
-if __name__ == "__main__":
-    
-    # データの置き場を定義
-    data_dir = '../data/original'
+def main(data_dir):
+    """
+    Parameter
+    ---------
+    data_dir: str
+        データの置き場を定義  
+    """
 
     # ディレクトリdata_dirが存在しない場合は作成する
     os.makedirs(data_dir, exist_ok=True)
@@ -60,3 +64,5 @@ if __name__ == "__main__":
 
     print('all processes finished')
 
+if __name__ == "__main__":
+    main(sys.args[1])
