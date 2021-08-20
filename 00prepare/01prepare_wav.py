@@ -10,20 +10,21 @@ import sox
 
 # osモジュールをインポート
 import os
+import sys
 
 #
 # メイン関数
 #
-if __name__ == "__main__":
-    
+
+def main(data_dir):
     # wavファイルが展開されたディレクトリ
-    original_wav_dir = '../data/original/jsut_ver1.1/basic5000/wav'
+    original_wav_dir = f'{data_dir}/original/jsut_ver1.1/basic5000/wav'
 
     # フォーマット変換したwavファイルを出力するディレクトリ
-    out_wav_dir = '../data/wav'
+    out_wav_dir = f'{data_dir}/wav'
 
     # wavデータのリストを格納するディレクトリ
-    out_scp_dir = '../data/label/all'
+    out_scp_dir = f'{data_dir}/label/all'
 
     # 出力ディレクトリが存在しない場合は作成する
     os.makedirs(out_wav_dir, exist_ok=True)
@@ -58,3 +59,5 @@ if __name__ == "__main__":
             scp_file.write('%s %s\n' % 
                            (filename, os.path.abspath(wav_path_out)))
         
+if __name__ == "__main__":
+    main(sys.args[1])
