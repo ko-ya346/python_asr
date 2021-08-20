@@ -11,23 +11,24 @@
 
 # osモジュールをインポート
 import os
+import sys
 
 #
 # メイン関数
 #
-if __name__ == "__main__":
-    
+
+def main(data_dir):    
     # 全データが記述されているリストの置き場
-    all_dir = '../data/label/all'
+    all_dir = f'{data_dir}/label/all'
 
     # 評価データが記述されたリストの出力先
-    out_eval_dir = '../data/label/test'
+    out_eval_dir = f'{data_dir}/label/test'
     # 開発データが記述されたリストの出力先
-    out_dev_dir = '../data/label/dev'
+    out_dev_dir = f'{data_dir}/label/dev'
     # 学習データ（小）が記述されたリストの出力先
-    out_train_small_dir = '../data/label/train_small'
+    out_train_small_dir = f'{data_dir}/label/train_small'
     # 学習データ（大）が記述されたリストの出力先
-    out_train_large_dir = '../data/label/train_large'
+    out_train_large_dir = f'{data_dir}/label/train_large'
 
     # 各出力ディレクトリが存在しない場合は作成する
     for out_dir in [out_eval_dir, out_dev_dir, 
@@ -63,3 +64,5 @@ if __name__ == "__main__":
                         # 501～1500: 学習（小）データリストへ書き込み
                         train_small_file.write(line)
 
+if __name__ == "__main__":
+    main(sys.args[1])
