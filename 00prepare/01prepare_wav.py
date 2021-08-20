@@ -60,4 +60,4 @@ def main(data_dir):
                            (filename, os.path.abspath(wav_path_out)))
         
 if __name__ == "__main__":
-    main(sys.args[1])
+    main(sys.argv[1])
